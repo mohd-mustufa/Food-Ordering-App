@@ -21,6 +21,9 @@
 // console.log(parentDiv);
 
 // ===========================> <THREE>
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 const parentDiv = React.createElement("div", { id: "parent" }, [
 	React.createElement("div", { id: "child1" }, [
 		React.createElement("h1", {}, "This is h1 of child1"),
