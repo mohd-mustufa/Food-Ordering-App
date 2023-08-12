@@ -2,7 +2,10 @@
 	"name": "react",
 	"version": "1.0.0",
 	"description": "",
+	"main": "index.js",
 	"scripts": {
+		"start": "parcel html/component3.html",
+		"build": "parcel build html/component3.html",
 		"test": "jest"
 	},
 	"keywords": [],
