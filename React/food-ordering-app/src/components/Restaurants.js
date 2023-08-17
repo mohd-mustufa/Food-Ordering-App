@@ -1,5 +1,5 @@
 import React from "react";
-import { apiData } from "./apiData";
+import apiData from "../commonUtils/apiData";
 import { ResCard } from "./ResCard";
 
 export const Restaurants = () => (

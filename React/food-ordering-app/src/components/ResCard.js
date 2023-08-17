@@ -1,10 +1,9 @@
 import React from "react";
+import { RES_IMG } from "../commonUtils/constants";
 
-const imagePrefix =
-  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 export const ResCard = (props) => (
   <div id="cardContainer">
-    <img src={imagePrefix + props.imageID} id="cardLogo" />
+    <img src={RES_IMG + props.imageID} id="cardLogo" />
     <div id="restDetails">
       <h4>{props.name}</h4>
       <svg
@@ -36,7 +35,7 @@ export const ResCard = (props) => (
             y2="19"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#21973B"></stop>
+            <stop stopColor="#21973B"></stop>
             <stop offset="1" stop-color="#128540"></stop>
           </linearGradient>
         </defs>

@@ -5,3 +5,5 @@ export const Footer = () => (
     <p>&copy; 2023 Mustufa's Food App. All rights reserved.</p>
   </div>
 );
+
+export default Footer;

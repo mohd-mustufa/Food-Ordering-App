@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./Header";
-import { Restaurants } from "./Restaurants";
-import { Footer } from "./Footer";
+import Header from "./components/Header";
+import { Restaurants } from "./components/Restaurants";
+import { Footer } from "./components/Footer";
 
 const App = () => (
   <>
