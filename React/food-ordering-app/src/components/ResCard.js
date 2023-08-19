@@ -3,9 +3,9 @@ import { RES_IMG } from "../commonUtils/constants";
 
 export const ResCard = (props) => (
   <div id="cardContainer">
-    <img src={RES_IMG + props.imageID} id="cardLogo" />
+    <img src={RES_IMG + props?.imageID} id="cardLogo" />
     <div id="restDetails">
-      <h4>{props.name}</h4>
+      <h4>{props?.name}</h4>
       <svg
         width="20"
         height="20"
@@ -13,8 +13,8 @@ export const ResCard = (props) => (
         fill="none"
         role="img"
         aria-hidden="true"
-        strokeColor="rgba(2, 6, 12, 0.92)"
-        fillColor="rgba(2, 6, 12, 0.92)"
+        strokecolor="rgba(2, 6, 12, 0.92)"
+        fillcolor="rgba(2, 6, 12, 0.92)"
       >
         <circle
           cx="10"
@@ -36,13 +36,13 @@ export const ResCard = (props) => (
             gradientUnits="userSpaceOnUse"
           >
             <stop stopColor="#21973B"></stop>
-            <stop offset="1" stop-color="#128540"></stop>
+            <stop offset="1" stopColor="#128540"></stop>
           </linearGradient>
         </defs>
       </svg>
-      <span>{props.rating}</span>
-      <p>{props.cuisines.join(", ")} </p>
-      <p>{props.area}</p>
+      <span>{props?.rating}</span>
+      <p>{props?.cuisines?.join(", ")} </p>
+      <p>{props?.area}</p>
     </div>
   </div>
 );

@@ -2,7 +2,7 @@ export default apiData = [
   {
     info: {
       id: "47385",
-      name: "Priyadarshini Grand",
+      name: "Mustufa Grand",
       cloudinaryImageId: "c9elzh8awx7jcx70cood",
       locality: "Siddhaiah Puranik Road",
       areaName: "Basaveshwara Nagar",
@@ -102,7 +102,7 @@ export default apiData = [
       areaName: "Jayanagar",
       costForTwo: "₹400 for two",
       cuisines: ["South Indian", "Snacks"],
-      avgRating: 4.5,
+      avgRating: 3.4,
       feeDetails: {
         restaurantId: "684427",
         fees: [
@@ -120,7 +120,7 @@ export default apiData = [
         totalFee: 4100,
       },
       parentId: "396620",
-      avgRatingString: "4.5",
+      avgRatingString: "2.5",
       totalRatingsString: "1K+",
       sla: {
         deliveryTime: 27,
@@ -192,7 +192,7 @@ export default apiData = [
       areaName: "Basavanagudi",
       costForTwo: "₹100 for two",
       cuisines: ["South Indian"],
-      avgRating: 4.7,
+      avgRating: 3.7,
       veg: true,
       feeDetails: {
         restaurantId: "111261",
@@ -280,7 +280,7 @@ export default apiData = [
       areaName: "Tavarekere",
       costForTwo: "₹200 for two",
       cuisines: ["Indian"],
-      avgRating: 4.3,
+      avgRating: 1.3,
       feeDetails: {
         restaurantId: "300804",
         fees: [
@@ -370,7 +370,7 @@ export default apiData = [
       areaName: "Basavanagudi",
       costForTwo: "₹150 for two",
       cuisines: ["South Indian"],
-      avgRating: 4.5,
+      avgRating: 3.5,
       veg: true,
       feeDetails: {
         restaurantId: "56428",
@@ -460,7 +460,7 @@ export default apiData = [
       areaName: "Koramangala",
       costForTwo: "₹137 for two",
       cuisines: ["South Indian"],
-      avgRating: 4.5,
+      avgRating: 2.5,
       veg: true,
       feeDetails: {
         restaurantId: "325",
