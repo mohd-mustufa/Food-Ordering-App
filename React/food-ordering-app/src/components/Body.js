@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Restaurants } from "./Restaurants";
-import apiData from "../commonUtils/apiData";
 import { useState } from "react";
+import Shimmer from "./Shimmer";
 
 export const Body = () => {
-  let [resData, setResData] = useState(apiData);
+  let [resData, setResData] = useState([]);
 
   const fetchApiData = async () => {
     const data = await fetch(
@@ -24,26 +24,34 @@ export const Body = () => {
     fetchApiData();
   }, []);
 
+  if (resData.length === 0) {
+    return <Shimmer />;
+  }
+
   return (
     <>
-      <h2 style={{ margin: "10px" }}>Restaurants with online food delivery</h2>
-      <div className="filter">
-        <div className="top-rated-restaurants">
-          <button
-            id="top-rated-btn"
-            onClick={() => {
-              const topRatedRestaurants = resData.filter(
-                (restaurant) => restaurant.info.avgRating > 4
-              );
-              setResData(topRatedRestaurants);
-            }}
-          >
-            Top Rated Restaurants
-          </button>
+      <div className="body-container">
+        <h2 style={{ margin: "10px" }}>
+          Restaurants with online food delivery
+        </h2>
+        <div className="filter">
+          <div className="top-rated-restaurants">
+            <button
+              id="top-rated-btn"
+              onClick={() => {
+                const topRatedRestaurants = resData.filter(
+                  (restaurant) => restaurant.info.avgRating > 4
+                );
+                setResData(topRatedRestaurants);
+              }}
+            >
+              Top Rated Restaurants
+            </button>
+          </div>
         </div>
-      </div>
 
-      <Restaurants resData={resData} />
+        <Restaurants resData={resData} />
+      </div>
     </>
   );
 };
