@@ -93,7 +93,7 @@ p {
 }
 
 #top-rated-btn {
-  margin: 10px;
+  margin: 15px 0;
   padding: 5px;
   font-size: 15px;
   background-color: #22611a;
@@ -112,4 +112,28 @@ p {
 
 .body-container {
   min-height: 68vh;
+}
+
+.style-btn {
+  height: 30px;
+  width: 100px;
+  margin-right: 20px;
+  margin-top: 15px;
+  padding: 0px 10px;
+  border: none;
+  background-color: rgb(175, 240, 234);
+  cursor: pointer;
+}
+
+.filter {
+  display: flex;
+}
+
+.search-btn {
+  margin-left: 10px;
+}
+
+.search-input {
+  height: 22px;
+  margin-left: 5px;
 }

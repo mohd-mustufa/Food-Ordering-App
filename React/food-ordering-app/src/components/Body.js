@@ -5,6 +5,8 @@ import Shimmer from "./Shimmer";
 
 export const Body = () => {
   let [resData, setResData] = useState([]);
+  let [searchText, setSearchText] = useState("");
+  let [filteredRes, setFilteredRes] = useState([]);
 
   const fetchApiData = async () => {
     const data = await fetch(
@@ -13,6 +15,12 @@ export const Body = () => {
 
     let jsonData = await data.json();
     setResData(
+      jsonData?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants ||
+        jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+    );
+    setFilteredRes(
       jsonData?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants ||
         jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
@@ -30,11 +38,34 @@ export const Body = () => {
 
   return (
     <>
+      <h2 style={{ margin: "10px" }}>Restaurants with online food delivery</h2>
       <div className="body-container">
-        <h2 style={{ margin: "10px" }}>
-          Restaurants with online food delivery
-        </h2>
         <div className="filter">
+          <div className="search">
+            <input
+              type="text"
+              id="search-input"
+              className="search-input"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+            />
+            <button
+              className="search-btn style-btn"
+              onClick={() => {
+                const filteredRestaurants = resData.filter((restaurant) =>
+                  restaurant.info.name
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase())
+                );
+                filteredRestaurants.length !== 0
+                  ? setFilteredRes(filteredRestaurants)
+                  : "";
+                console.log(resData);
+              }}
+            >
+              Search
+            </button>
+          </div>
           <div className="top-rated-restaurants">
             <button
               id="top-rated-btn"
@@ -42,7 +73,7 @@ export const Body = () => {
                 const topRatedRestaurants = resData.filter(
                   (restaurant) => restaurant.info.avgRating > 4
                 );
-                setResData(topRatedRestaurants);
+                setFilteredRes(topRatedRestaurants);
               }}
             >
               Top Rated Restaurants
@@ -50,7 +81,7 @@ export const Body = () => {
           </div>
         </div>
 
-        <Restaurants resData={resData} />
+        <Restaurants resData={filteredRes} />
       </div>
     </>
   );
