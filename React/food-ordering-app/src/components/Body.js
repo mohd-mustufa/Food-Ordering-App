@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Restaurants } from "./Restaurants";
-import { useState } from "react";
 import Shimmer from "./Shimmer";
 
 export const Body = () => {
