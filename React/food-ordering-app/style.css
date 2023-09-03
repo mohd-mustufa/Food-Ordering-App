@@ -33,6 +33,11 @@ body {
   align-self: flex-start;
 }
 
+li:hover {
+  transform: scale(1.05, 1.05);
+  transition: transform 0.1s ease-in-out;
+}
+
 .restaurantContainer {
   display: flex;
   flex-wrap: wrap;
@@ -50,6 +55,7 @@ body {
 
 #cardContainer:hover {
   transform: scale(0.95, 0.95);
+  transition: transform 0.2s ease-in-out;
 }
 
 #cardLogo {
@@ -156,13 +162,12 @@ p {
   margin-top: 62px;
 }
 
-.no-style-link {
+a:link,
+a:hover,
+a:visited,
+a:focus {
   text-decoration: none;
   color: #000;
-}
-
-.no-style-link:hover {
-  color: #000080;
 }
 
 .menu {

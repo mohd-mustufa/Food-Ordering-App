@@ -24,7 +24,9 @@ const Menu = ({ resInfo }) => {
       {menuItems.map((menuItem, index) => {
         return (
           <div key={menuItem?.card?.card?.title}>
-            {menuItem?.card?.card?.title === "Top Picks" ? (
+            {!(
+              menuItem?.card?.card?.title && menuItem?.card?.card?.itemCards
+            ) ? (
               ""
             ) : (
               <>
