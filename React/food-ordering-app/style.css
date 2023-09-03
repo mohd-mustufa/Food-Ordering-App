@@ -15,6 +15,7 @@ body {
 
 #header ul {
   display: flex;
+  padding-left: 0px;
 }
 
 #header li {
@@ -89,7 +90,6 @@ p {
   color: #fff;
   text-align: center;
   padding: 20px;
-  position: sticky;
 }
 
 #top-rated-btn {
@@ -136,4 +136,71 @@ p {
 .search-input {
   height: 22px;
   margin-left: 5px;
+}
+
+.restaurant-info {
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.right-menu-header {
+  margin-top: 62px;
+}
+
+.no-style-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.no-style-link:hover {
+  color: #000080;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+
+.menu-button {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+.menu-description {
+  white-space: wrap;
+  max-width: 90%;
+  opacity: 0.6;
+}
+
+.right-menu-content img {
+  height: 120px;
+  width: 120px;
+  border-radius: 7px;
+}
+
+.menu-category {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px;
+}
+
+.menu-line {
+  opacity: 0.6;
 }

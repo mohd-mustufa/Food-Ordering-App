@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Restaurants } from "./Restaurants";
 import Shimmer from "./Shimmer";
+import { RESTAURANT_DATA } from "../commonUtils/constants";
 
 export const Body = () => {
   let [resData, setResData] = useState([]);
@@ -8,9 +9,7 @@ export const Body = () => {
   let [filteredRes, setFilteredRes] = useState([]);
 
   const fetchApiData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(RESTAURANT_DATA);
 
     let jsonData = await data.json();
     setResData(

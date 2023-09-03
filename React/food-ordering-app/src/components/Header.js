@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "./Logo";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   let [loginVal, setLoginVal] = useState("Login");
@@ -10,9 +11,23 @@ const Header = () => {
       <Logo />
       <ul>
         <li id="appName">Mustufa's Food App</li>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact Us</li>
+      </ul>
+      <ul>
+        <li>
+          <Link to="/" className="no-style-link">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/about" className="no-style-link">
+            About
+          </Link>
+        </li>
+        <li>
+          <Link to="/contact" className="no-style-link">
+            Contact Us
+          </Link>
+        </li>
         <li>Help</li>
         <li>Cart</li>
         <button
