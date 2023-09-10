@@ -11,7 +11,6 @@ class User extends React.Component {
       },
       count: 0,
     };
-    console.log(this.props.name + "Child Constructor");
   }
 
   async fetchApiData() {
@@ -21,25 +20,15 @@ class User extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.name + "Child ComponentDidMount");
     this.fetchApiData();
-    this.timer = setInterval(() => {
-      console.log("mount timer");
-    }, 1000);
   }
 
-  componentDidUpdate() {
-    console.log(this.props.name + "Child ComponentDidUpdate");
-  }
+  componentDidUpdate() {}
 
-  componentWillUnmount() {
-    clearInterval(this.timer);
-    console.log(this.props.name + "Child ComponentWillUnmount");
-  }
+  componentWillUnmount() {}
 
   render() {
     const { name, bio, avatar_url } = this.state.userInfo;
-    console.log(this.props.name + "Child Render");
     return (
       <>
         <h1>Count: {this.state.count}</h1>

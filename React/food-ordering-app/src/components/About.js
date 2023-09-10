@@ -4,16 +4,11 @@ import React from "react";
 class About extends React.Component {
   constructor(props) {
     super(props);
-    console.log("Parent Constructor");
   }
 
-  componentDidMount() {
-    console.log("Parent ComponentDidMount");
-  }
+  componentDidMount() {}
 
   render() {
-    console.log("Child Constructor");
-
     return (
       <div>
         <h1>This is the about page for mustufa's food app</h1>
