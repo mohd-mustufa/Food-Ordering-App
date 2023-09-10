@@ -1,34 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Restaurants } from "./Restaurants";
 import Shimmer from "./Shimmer";
-import { RESTAURANT_DATA } from "../commonUtils/constants";
+import useRestaurant from "../commonUtils/useRestaurant";
 
 export const Body = () => {
-  let [resData, setResData] = useState([]);
   let [searchText, setSearchText] = useState("");
-  let [filteredRes, setFilteredRes] = useState([]);
 
-  const fetchApiData = async () => {
-    const data = await fetch(RESTAURANT_DATA);
-
-    let jsonData = await data.json();
-    setResData(
-      jsonData?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants ||
-        jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-    );
-    setFilteredRes(
-      jsonData?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants ||
-        jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-    );
-  };
-
-  useEffect(() => {
-    fetchApiData();
-  }, []);
+  const [resData, filteredRes] = useRestaurant();
 
   if (resData.length === 0) {
     return <Shimmer />;

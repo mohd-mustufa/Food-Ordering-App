@@ -5,17 +5,21 @@ import { Link } from "react-router-dom";
 export const Restaurants = (props) => (
   <>
     <div className="restaurantContainer">
-      {props?.resData?.map((rest) => (
-        <Link to={"/restaurants/" + rest?.info?.id} key={rest?.info?.id}>
-          <ResCard
-            name={rest?.info?.name}
-            cuisines={rest?.info?.cuisines}
-            rating={rest?.info?.avgRating}
-            area={rest?.info?.areaName}
-            imageID={rest?.info?.cloudinaryImageId}
-          />
-        </Link>
-      ))}
+      {props?.resData?.map((rest) => {
+        const { id, name, cuisines, avgRating, areaName, cloudinaryImageId } =
+          rest?.info;
+        return (
+          <Link to={"/restaurants/" + id} key={id}>
+            <ResCard
+              name={name}
+              cuisines={cuisines}
+              rating={avgRating}
+              area={areaName}
+              imageID={cloudinaryImageId}
+            />
+          </Link>
+        );
+      })}
     </div>
   </>
 );

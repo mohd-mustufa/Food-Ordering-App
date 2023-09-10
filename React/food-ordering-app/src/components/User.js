@@ -9,7 +9,6 @@ class User extends React.Component {
         name: "Default",
         bio: "NA",
       },
-      count: 0,
     };
   }
 
@@ -23,28 +22,14 @@ class User extends React.Component {
     this.fetchApiData();
   }
 
-  componentDidUpdate() {}
-
-  componentWillUnmount() {}
-
   render() {
     const { name, bio, avatar_url } = this.state.userInfo;
     return (
-      <>
-        <h1>Count: {this.state.count}</h1>
-        <button
-          onClick={() => {
-            this.setState({ count: this.state.count + 1 });
-          }}
-        >
-          Increment Count
-        </button>
-        <div className="user">
-          <img style={{ height: "200px", width: "200px" }} src={avatar_url} />
-          <h3>Name: {name}</h3>
-          <p>Occupation: {bio}</p>
-        </div>
-      </>
+      <div className="user">
+        <img style={{ height: "200px", width: "200px" }} src={avatar_url} />
+        <h3>Name: {name}</h3>
+        <p>Occupation: {bio}</p>
+      </div>
     );
   }
 }
