@@ -5,12 +5,15 @@ import useRestaurant from "../commonUtils/useRestaurant";
 
 export const Body = () => {
   let [searchText, setSearchText] = useState("");
+  let [filteredRes, setFilteredRes] = useState([]);
 
-  const [resData, filteredRes] = useRestaurant();
+  const resData = useRestaurant();
 
   if (resData.length === 0) {
     return <Shimmer />;
   }
+
+  if (filteredRes.length === 0 && resData.length !== 0) setFilteredRes(resData);
 
   return (
     <>
@@ -36,7 +39,6 @@ export const Body = () => {
                 filteredRestaurants.length !== 0
                   ? setFilteredRes(filteredRestaurants)
                   : "";
-                console.log(resData);
               }}
             >
               Search
