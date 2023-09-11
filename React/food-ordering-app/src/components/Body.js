@@ -18,7 +18,7 @@ export const Body = () => {
       </h1>
     );
 
-  if (resData.length === 0) {
+  if (!resData || resData.length === 0) {
     return <Shimmer />;
   }
 

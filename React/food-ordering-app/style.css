@@ -22,7 +22,7 @@ body {
   padding-right: 30px;
   margin-top: 15px;
   min-width: fit-content;
-  font-size: 24px;
+  font-size: 22px;
   font-family: Arial, Helvetica, sans-serif;
   list-style-type: none;
 }
@@ -30,7 +30,8 @@ body {
 #header #appName {
   background-color: rgb(208, 241, 241);
   padding-right: 0;
-  margin-right: 90px;
+  margin-right: 50px;
+  min-width: fit-content;
   align-self: flex-start;
 }
 
