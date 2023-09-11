@@ -2,9 +2,11 @@ import React from "react";
 import Logo from "./Logo";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../commonUtils/useOnlineStatus";
 
 const Header = () => {
-  let [loginVal, setLoginVal] = useState("Login");
+  const [loginVal, setLoginVal] = useState("Login");
+  const onlineStatus = useOnlineStatus();
 
   return (
     <div id="header">
@@ -13,6 +15,7 @@ const Header = () => {
         <li id="appName">Mustufa's Food App</li>
       </ul>
       <ul>
+        <li id="onlineStatus">Online: {onlineStatus ? "✅️" : "🛑️"}</li>
         <li>
           <Link to="/">Home</Link>
         </li>

@@ -2,12 +2,21 @@ import React, { useState } from "react";
 import { Restaurants } from "./Restaurants";
 import Shimmer from "./Shimmer";
 import useRestaurant from "../commonUtils/useRestaurant";
+import useOnlineStatus from "../commonUtils/useOnlineStatus";
 
 export const Body = () => {
   let [searchText, setSearchText] = useState("");
   let [filteredRes, setFilteredRes] = useState([]);
 
   const resData = useRestaurant();
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false)
+    return (
+      <h1>
+        You seem to be offline. Check your internet connection and try again!!
+      </h1>
+    );
 
   if (resData.length === 0) {
     return <Shimmer />;
