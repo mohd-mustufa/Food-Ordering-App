@@ -49,3 +49,14 @@ export const ResCard = (props) => {
     </div>
   );
 };
+
+export const EnhancedResCard = (ResCard) => {
+  return (props) => {
+    return (
+      <div>
+        <p className="closed-rescard">Closed</p>
+        <ResCard {...props} />
+      </div>
+    );
+  };
+};

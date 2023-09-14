@@ -223,3 +223,14 @@ a:focus {
   margin: 10px;
   width: fit-content;
 }
+
+.closed-rescard {
+  background-color: black;
+  color: white;
+  font-weight: 500;
+  position: absolute;
+  margin-left: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 1;
+}
