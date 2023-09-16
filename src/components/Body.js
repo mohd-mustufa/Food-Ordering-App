@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Restaurants } from "./Restaurants";
 import Shimmer from "./Shimmer";
 import useRestaurant from "../commonUtils/useRestaurant";
 import useOnlineStatus from "../commonUtils/useOnlineStatus";
+import UserContext from "../commonUtils/UserContext";
 
 export const Body = () => {
   let [searchText, setSearchText] = useState("");
@@ -10,6 +11,8 @@ export const Body = () => {
 
   const resData = useRestaurant();
   const onlineStatus = useOnlineStatus();
+
+  const { userName, setContextData } = useContext(UserContext);
 
   if (onlineStatus === false)
     return (
@@ -65,6 +68,18 @@ export const Body = () => {
             >
               Top Rated Restaurants
             </button>
+            <>
+              <label htmlFor="context-value" className="context-input">
+                User:
+              </label>
+              <input
+                id="context-value"
+                className="context-input"
+                type="text"
+                value={userName}
+                onChange={(e) => setContextData({ userName: e.target.value })}
+              ></input>
+            </>
           </div>
         </div>
 

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { RES_IMG } from "../commonUtils/constants";
+import UserContext from "../commonUtils/UserContext";
 
 export const ResCard = (props) => {
+  const { userName } = useContext(UserContext);
   const { imageID, name, rating, cuisines, area } = props;
   return (
     <div id="cardContainer">
@@ -45,6 +47,7 @@ export const ResCard = (props) => {
         <span>{rating}</span>
         <p>{cuisines?.join(", ")} </p>
         <p>{area}</p>
+        <p>User: {userName}</p>
       </div>
     </div>
   );
