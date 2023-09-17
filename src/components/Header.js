@@ -4,11 +4,15 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../commonUtils/useOnlineStatus";
 import UserContext from "../commonUtils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [loginVal, setLoginVal] = useState("Login");
   const onlineStatus = useOnlineStatus();
   const { userName } = useContext(UserContext);
+
+  // Subscribing to the store
+  const cartItems = useSelector((store) => store.cart.items);
 
   return (
     <div id="header">
@@ -32,7 +36,22 @@ const Header = () => {
           <Link to="/contact">Contact Us</Link>
         </li>
         <li>Help</li>
-        <li>Cart</li>
+        <li>
+          <Link to="/cart">
+            Cart{" "}
+            <span
+              style={{
+                border: "1px solid black",
+                padding: "2px 4px",
+                marginLeft: "-4px",
+                fontSize: "15px",
+                borderRadius: "5px",
+              }}
+            >
+              {cartItems.length}
+            </span>
+          </Link>
+        </li>
         <li style={{ fontWeight: "bold" }}>{userName}</li>
         <button
           className="login-btn style-btn"
