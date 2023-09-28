@@ -96,7 +96,7 @@ export default apiData = [
   {
     info: {
       id: "684427",
-      name: "Cafe Amudham",
+      name: "Cafe Biryani",
       cloudinaryImageId: "0bcdca61f3cd1e9135b98328593d044f",
       locality: "Lalbhagh  Siddapura",
       areaName: "Jayanagar",
@@ -364,7 +364,7 @@ export default apiData = [
   {
     info: {
       id: "56428",
-      name: "Puliyogare Point",
+      name: "Biryani Point",
       cloudinaryImageId: "wet9zrjusmdtkk16jlrz",
       locality: "N.R Colony",
       areaName: "Basavanagudi",
