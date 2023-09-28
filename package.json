@@ -1,10 +1,13 @@
 {
+  "homepage": "http://mohd-mustufa.github.io/Food-Ordering-App",
   "name": "react",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "parcel build index.html",
     "test": "jest",
     "watch-test": "jest --watch"
@@ -19,6 +22,7 @@
     "@testing-library/jest-dom": "^6.1.3",
     "@testing-library/react": "^14.0.0",
     "babel-jest": "^29.7.0",
+    "gh-pages": "^6.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "parcel": "^2.9.3",
